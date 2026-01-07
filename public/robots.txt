@@ -1,0 +1,11 @@
+# Robots.txt for qualz.ai
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://qualz.ai/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/

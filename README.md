@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qualz.ai Marketing Website
+
+The official marketing website for Qualz.ai - an AI-powered qualitative research platform.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Language:** TypeScript
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production build
+npm run build
 
-## Learn More
+# Start production server
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Landing page
+│   ├── features/          # Features page
+│   ├── solutions/         # Solutions page
+│   ├── pricing/           # Pricing page
+│   ├── docs/              # Documentation page
+│   └── contact/           # Contact page
+├── components/
+│   ├── ui/                # Reusable UI components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   └── Container.tsx
+│   ├── layout/            # Layout components
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   ├── sections/          # Page sections
+│   │   ├── Hero.tsx
+│   │   ├── FeaturesPreview.tsx
+│   │   ├── HowItWorks.tsx
+│   │   └── ...
+│   └── chatbot/           # Mock chatbot UI
+├── data/                  # Static data files
+│   ├── features.ts
+│   ├── solutions.ts
+│   └── pricing.ts
+└── lib/                   # Utility functions
+    └── utils.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Pages
 
-## Deploy on Vercel
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `/` | Landing page with hero, features preview, solutions |
+| Features | `/features` | All platform features and research lenses |
+| Solutions | `/solutions` | Industry-specific use cases |
+| Pricing | `/pricing` | Pricing tiers and FAQ |
+| Docs | `/docs` | Documentation overview |
+| Contact | `/contact` | Contact and demo booking |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Brand Colors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```css
+--brand-purple: #7C3AED
+--brand-purple-light: #A855F7
+--brand-green: #10B981
+--brand-orange: #F59E0B
+--brand-blue: #3B82F6
+```
+
+## Updating Content
+
+### Features
+Edit `src/data/features.ts` to add/modify features.
+
+### Solutions
+Edit `src/data/solutions.ts` to add/modify solutions.
+
+### Pricing
+Edit `src/data/pricing.ts` to update pricing tiers and FAQ.
+
+### Logos
+Add logos to `public/images/logos/` and update component references.
+
+## Demo Booking
+
+All "Request Demo" CTAs link to:
+```
+https://app.reclaim.ai/m/prajwal-paudyal/high-priority-meeting
+```
+
+## Deployment
+
+The site is configured for static export. Use the GitHub Actions workflow in `.github/workflows/deploy.yml` for CI/CD.
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+## Related Repositories
+
+This is part of the Qualz marketing websites ecosystem:
+
+- [bigyan_analytics](https://github.com/prwlnght/bigyananalytics_marketing.git)
+- [consulting_marketing](https://github.com/prwlnght/consulting_marketing.git)
+- [startup_insights_marketing](https://github.com/prwlnght/startup_insights_marketing.git)
+- [nonprofit_insights_marketing](https://github.com/prwlnght/nonprofit_insights_marketing.git)
+- [healthcare_marketing](https://github.com/prwlnght/healthcare_marketing.git)
+
+## License
+
+Proprietary - Qualz.ai
