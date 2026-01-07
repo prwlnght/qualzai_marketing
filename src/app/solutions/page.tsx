@@ -5,7 +5,9 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import { solutions } from "@/data/solutions";
+import { solutionsFAQs } from "@/data/faqs";
 import { ArrowRight } from "lucide-react";
+import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 
 export default function SolutionsPage() {
@@ -103,6 +105,12 @@ export default function SolutionsPage() {
           </div>
         </Container>
       </section>
+
+      <FAQ
+        faqs={solutionsFAQs}
+        title="Solutions Questions"
+        subtitle="Common questions about our industry solutions"
+      />
 
       <CTA />
     </>

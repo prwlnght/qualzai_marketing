@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import { features } from "@/data/features";
+import { featuresFAQs } from "@/data/faqs";
+import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 
 export default function FeaturesPage() {
@@ -137,6 +139,13 @@ export default function FeaturesPage() {
           </div>
         </Container>
       </section>
+
+      <FAQ
+        faqs={featuresFAQs}
+        title="Feature Questions"
+        subtitle="Learn more about our platform capabilities"
+        className="bg-white"
+      />
 
       <CTA />
     </>

@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import { pricingTiers, pricingFAQs } from "@/data/pricing";
+import { pricingTiers } from "@/data/pricing";
+import { enhancedPricingFAQs } from "@/data/faqs";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import FAQ from "@/components/sections/FAQ";
 
 export default function PricingPage() {
   return (
@@ -114,38 +116,11 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold text-text-dark text-center mb-12"
-            >
-              Frequently Asked Questions
-            </motion.h2>
-            <div className="space-y-6">
-              {pricingFAQs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-lg p-6 shadow-sm"
-                >
-                  <h3 className="text-lg font-semibold text-text-dark mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-text-medium">{faq.answer}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <FAQ
+        faqs={enhancedPricingFAQs}
+        title="Pricing Questions"
+        subtitle="Everything you need to know about our plans"
+      />
 
       {/* Bottom CTA */}
       <section className="py-20 bg-brand-purple text-white">
